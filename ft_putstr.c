@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bfaure <bfaure@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/29 13:22:41 by bfaure            #+#    #+#             */
-/*   Updated: 2022/12/08 14:41:27 by bfaure           ###   ########lyon.fr   */
+/*   Created: 2022/12/08 14:36:17 by bfaure            #+#    #+#             */
+/*   Updated: 2022/12/08 14:58:36 by bfaure           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <stdlib.h>
-# include <unistd.h>
-# include <stdarg.h
-# include <libft.h>
-# include <stdio.h>
+static size_t	ft_strlen(char *str)
+{
+	size_t	i;
 
-int		ft_printf(const char *str, ...);
-void	ft_putnbr_base(int nbr, char *base);
-void	ft_putstr(char *str);
-void	ft_putchar(char c, unsigned long long size);
-void	ft_putnbr_fd(int n);
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
+}
 
-#endif
+size_t	ft_putstr(char *str, size_t size)
+{
+	write(1, str, ft_strlen(str));
+	return (size + ft_strlen(str));
+}
