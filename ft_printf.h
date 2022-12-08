@@ -6,7 +6,7 @@
 /*   By: bfaure <bfaure@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 13:22:41 by bfaure            #+#    #+#             */
-/*   Updated: 2022/12/08 14:41:27 by bfaure           ###   ########lyon.fr   */
+/*   Updated: 2022/12/08 17:37:13 by bfaure           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,13 @@
 
 # include <stdlib.h>
 # include <unistd.h>
-# include <stdarg.h
-# include <libft.h>
+# include <stdarg.h>
 # include <stdio.h>
 
-int		ft_printf(const char *str, ...);
-void	ft_putnbr_base(int nbr, char *base);
-void	ft_putstr(char *str);
-void	ft_putchar(char c, unsigned long long size);
-void	ft_putnbr_fd(int n);
+size_t	ft_printf(const char *str, ...);
+size_t	ft_putnbr_base(long int nbr, char *base, size_t size);
+size_t	ft_putstr(char *str, size_t size);
+size_t	ft_putchar(char c, size_t size);
+size_t	ft_putnbr(int n, size_t size);
 
 #endif
