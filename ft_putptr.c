@@ -6,18 +6,20 @@
 /*   By: bfaure <bfaure@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 11:56:22 by bfaure            #+#    #+#             */
-/*   Updated: 2022/12/12 16:11:46 by bfaure           ###   ########lyon.fr   */
+/*   Updated: 2022/12/12 16:28:37 by bfaure           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putptr(const void *nbr, char *base, int size)
+int	ft_putptr(const void *nbr, char *base)
 {
 	int				i;
 	char			nbr_print[9];
 	unsigned long	ptr;
+	int				size;
 
+	size = 0;
 	ptr = (unsigned long) nbr;
 	i = 8;
 	while ((ptr / 16) > 0 || i >= 8)

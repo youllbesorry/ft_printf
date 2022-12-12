@@ -6,7 +6,7 @@
 /*   By: bfaure <bfaure@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 14:36:17 by bfaure            #+#    #+#             */
-/*   Updated: 2022/12/12 16:11:54 by bfaure           ###   ########lyon.fr   */
+/*   Updated: 2022/12/12 16:25:11 by bfaure           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,7 @@ static size_t	ft_strlen(char *str)
 	return (i);
 }
 
-int	ft_putstr(char *str, int size)
+int	ft_putstr(char *str)
 {
-	write(1, str, ft_strlen(str));
-	return (size + ft_strlen(str));
+	return (write(1, str, ft_strlen(str)));
 }

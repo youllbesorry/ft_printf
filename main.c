@@ -6,7 +6,7 @@
 /*   By: bfaure <bfaure@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 13:15:03 by bfaure            #+#    #+#             */
-/*   Updated: 2022/12/12 15:47:55 by bfaure           ###   ########lyon.fr   */
+/*   Updated: 2022/12/12 16:31:28 by bfaure           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 
 int	main(void)
 {
-	char	*ptr1[40];
-	char	*ptr2[9];
-
-	printf("%zu\n ", ft_printf("%%"));
-	printf("%d", printf("%%"));
+	printf("%d\n ", ft_printf(" %c ", '0'));
+	printf("%d", printf(" %c ", '0'));
 }
