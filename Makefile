@@ -6,13 +6,18 @@
 #    By: bfaure <bfaure@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/29 13:21:39 by bfaure            #+#    #+#              #
-#    Updated: 2022/11/29 13:28:49 by bfaure           ###   ########lyon.fr    #
+#    Updated: 2022/12/12 15:35:05 by bfaure           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 
 SRCS = ft_printf.c\
+		ft_putchar.c\
+		ft_putstr.c\
+		ft_putnbr.c\
+		ft_putnbr_base.c\
+		ft_putptr.c\
 
 HEADER = ft_printf.h
 

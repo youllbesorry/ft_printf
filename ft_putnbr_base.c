@@ -6,15 +6,15 @@
 /*   By: bfaure <bfaure@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 12:56:15 by bfaure            #+#    #+#             */
-/*   Updated: 2022/12/08 17:38:12 by bfaure           ###   ########lyon.fr   */
+/*   Updated: 2022/12/12 16:10:22 by bfaure           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_strlen(char *base)
+static size_t	ft_strlen(char *base)
 {
-	int	a;
+	size_t	a;
 
 	a = 0;
 	while (base[a] != '\0')
@@ -22,21 +22,24 @@ int	ft_strlen(char *base)
 	return (a);
 }
 
-size_t	ft_putnbr_base(long int nbr, char *base, size_t size)
+int	ft_putnbr_base(long int nbr, char *base)
 {
-	int		len;
-	char	nbr_print;
+	long int		len;
+	char			nbr_print;
+	int				size;
 
+	size = 0;
 	len = ft_strlen(base);
 	if (nbr < 0)
 	{
+		size++;
 		write(1, "-", 1);
-		ft_putnbr_base(nbr *= -1, base, size);
+		ft_putnbr_base(nbr *= -1, base);
 	}
 	else if (nbr >= len)
 	{
-		ft_putnbr_base(nbr / len, base, size);
-		ft_putnbr_base(nbr % len, base, size);
+		size += ft_putnbr_base(nbr / len, base);
+		size += ft_putnbr_base(nbr % len, base);
 	}
 	else
 	{

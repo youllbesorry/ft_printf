@@ -1,19 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bfaure <bfaure@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/08 14:32:22 by bfaure            #+#    #+#             */
-/*   Updated: 2022/12/12 16:11:10 by bfaure           ###   ########lyon.fr   */
+/*   Created: 2022/12/12 13:15:03 by bfaure            #+#    #+#             */
+/*   Updated: 2022/12/12 15:47:55 by bfaure           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putchar(char c)
+int	main(void)
 {
-	write(1, &c, 1);
-	return (1);
+	char	*ptr1[40];
+	char	*ptr2[9];
+
+	printf("%zu\n ", ft_printf("%%"));
+	printf("%d", printf("%%"));
 }
