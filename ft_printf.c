@@ -6,30 +6,31 @@
 /*   By: bfaure <bfaure@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 13:24:54 by bfaure            #+#    #+#             */
-/*   Updated: 2022/12/13 14:39:05 by bfaure           ###   ########lyon.fr   */
+/*   Updated: 2022/12/15 14:40:25 by bfaure           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	ft_find_the_type(char c, va_list var, size_t size)
+static int	ft_find_the_type(char c, va_list var, int size)
 {
 	if (c == 'c')
 		size += ft_putchar((int)va_arg(var, int));
 	else if (c == 'd' || c == 'i')
-		size += ft_putnbr((int)va_arg(var, int));
+		size += ft_putnbr((int)va_arg(var, int), 0) + 1;
 	else if (c == 's')
 		size += ft_putstr((char *)va_arg(var, char *));
 	else if (c == 'p')
 		size += ft_putptr((const void *)va_arg(var, const void *), \
 		"0123456789abcdef");
 	else if (c == 'u')
-		size += ft_putnbr((unsigned int)va_arg(var, unsigned int));
+		size += ft_putnbr_base((unsigned int)va_arg(var, unsigned int), \
+		"0123456789");
 	else if (c == 'x')
-		size += ft_putnbr_base((long int)va_arg(var, long int), \
+		size += ft_putnbr_base((unsigned int)va_arg(var, unsigned int), \
 		"0123456789abcdef");
 	else if (c == 'X')
-		size += ft_putnbr_base((long int)va_arg(var, long int), \
+		size += ft_putnbr_base((unsigned int)va_arg(var, unsigned int), \
 		"0123456789ABCDEF");
 	return (size);
 }

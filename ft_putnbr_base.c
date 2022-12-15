@@ -6,7 +6,7 @@
 /*   By: bfaure <bfaure@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 12:56:15 by bfaure            #+#    #+#             */
-/*   Updated: 2022/12/12 16:10:22 by bfaure           ###   ########lyon.fr   */
+/*   Updated: 2022/12/15 14:30:42 by bfaure           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ static size_t	ft_strlen(char *base)
 	return (a);
 }
 
-int	ft_putnbr_base(long int nbr, char *base)
+int	ft_putnbr_base(unsigned int nbr, char *base)
 {
-	long int		len;
-	char			nbr_print;
-	int				size;
+	unsigned int		len;
+	char				nbr_print;
+	int					size;
 
 	size = 0;
 	len = ft_strlen(base);
