@@ -6,7 +6,7 @@
 #    By: bfaure <bfaure@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/29 13:21:39 by bfaure            #+#    #+#              #
-#    Updated: 2022/12/12 15:35:05 by bfaure           ###   ########lyon.fr    #
+#    Updated: 2022/12/13 14:22:12 by bfaure           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ SRCS = ft_printf.c\
 		ft_putnbr_base.c\
 		ft_putptr.c\
 
-HEADER = ft_printf.h
+HEADER = /ft_printf.h
 
 CFLAGS = -Wall -Wextra -Werror
 

@@ -6,7 +6,7 @@
 /*   By: bfaure <bfaure@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 11:56:22 by bfaure            #+#    #+#             */
-/*   Updated: 2022/12/12 16:28:37 by bfaure           ###   ########lyon.fr   */
+/*   Updated: 2022/12/13 15:09:03 by bfaure           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,9 @@ int	ft_putptr(const void *nbr, char *base)
 
 	size = 0;
 	ptr = (unsigned long) nbr;
+	if (nbr == 0)
+		return (write(1, "(nil)", 5));
+	write(1, "0x", 2);
 	i = 8;
 	while ((ptr / 16) > 0 || i >= 8)
 	{
@@ -34,5 +37,5 @@ int	ft_putptr(const void *nbr, char *base)
 		write (1, &nbr_print[i++], 1);
 		size++;
 	}
-	return (size + 3);
+	return (size + 2);
 }

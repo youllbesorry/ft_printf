@@ -6,7 +6,7 @@
 /*   By: bfaure <bfaure@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 13:24:54 by bfaure            #+#    #+#             */
-/*   Updated: 2022/12/12 16:43:17 by bfaure           ###   ########lyon.fr   */
+/*   Updated: 2022/12/13 14:39:05 by bfaure           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,8 @@ static int	ft_find_the_type(char c, va_list var, size_t size)
 	else if (c == 's')
 		size += ft_putstr((char *)va_arg(var, char *));
 	else if (c == 'p')
-	{
-		write(1, "0x", 2);
 		size += ft_putptr((const void *)va_arg(var, const void *), \
 		"0123456789abcdef");
-	}
 	else if (c == 'u')
 		size += ft_putnbr((unsigned int)va_arg(var, unsigned int));
 	else if (c == 'x')
